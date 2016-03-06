@@ -13,6 +13,7 @@ class HangpersonGame
     @word = word
     @guesses = ''
     @wrong_guesses = ''
+    #@displayed = ''
   end
 
   def self.get_random_word
@@ -41,13 +42,14 @@ class HangpersonGame
   
   def check_win_or_lose
     self.word_with_guesses
-    if @displayed == @word
-         :win
-    elsif @wrong_guesses.length == 7
-         :lose
-    else
-         :play
-    end   
+    
+    if @displayed == @word  
+      :win
+    elsif  @wrong_guesses.length == 7
+      :lose
+    else 
+      :play
+    end
   end  
 
 end
